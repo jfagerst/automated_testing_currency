@@ -41,7 +41,7 @@ Siirry projektin juurikansioon ja käynnistä frontend:
 
 Siirry `server`-kansioon ja suorita testit komennolla:
 
-npm run test
+`npm run test`
 
 ## Testikattavuusraportin luominen
 
