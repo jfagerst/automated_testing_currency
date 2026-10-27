@@ -1,37 +1,55 @@
-# Automated testing example projet
-This is an example project demonstrating automated testing. App is a simple currency converter app using publicly available API for getting currency exchange rates. It contains unit tests for backend. Mocking, stubbing and spying are demonstated. There are also API tests and E2E test for the frontend.
+# Automaattinen testaus – Currency, osat 1–4
+
+Tämä repositorio sisältää Ohjelmistotestaus-kurssin tehtävän Automated testing – Currency, osat 1–4.
+
+Projektissa on yksinkertainen valuuttamuunninsovellus, joka hakee valuuttakursseja julkisesti saatavilla olevan rajapinnan kautta. Tehtävien tavoitteena on harjoitella automaattista testausta sovelluskehityksessä.
+
+Projektin testaus kattaa seuraavat osa-alueet:
+
+- Osa 1: Vite- ja Vitest-ympäristön käyttöönotto sekä yksinkertainen yksikkötesti.
+- Osa 2: Yksikkötestaus mockien, stubien ja spy-toimintojen avulla.
+- Osa 3: API-kutsujen simulointi testeissä.
+- Osa 4: API-testaus.
 
 
 
-## Setting up
+## Käyttöönotto
 
-Project contains .env files, since there are no sensitive data. If Node or React needs to reconfigured, edit .env files. There are two, one for the front end on root folder and a second one under the server folder. By default, backend is running on http://localhost:3000 and frontend on http://localhost/5173. 
+Backend-palvelin toimii osoitteessa http://localhost:3000 ja frontend osoitteessa http://localhost:5173.
 
-Install node modules for both backend and frontend. Run `npm i` under server and root for that.
-You may also need to run `npm i express cors dotenv` on server folder
+Asenna riippuvuudet sekä projektin juuressa että `server`-kansiossa suorittamalla kummassakin: 
+`npm i` 
 
-## Running app
+Jos backendin riippuvuuksia puuttuu, ne voi asentaa `server`-kansiossa komennolla:
+`npm i express cors dotenv`
 
-Run backend by navigating to server folder and running `npm run dev` or `npm run start`. 
-Run frontend by navigation to root folder and running `npm run dev`.
+## Sovelluksen käynnistäminen
 
-## Reset version control
+Siirry `server`-kansioon ja käynnistä backend kehitystilassa: 
+`npm run dev` tai `npm run start`. 
 
-Code is attached to a repository in Github already. To reset/replace that, delete .git folder on root and run npm init again. After that you are able to start version control from scratch again.
+Siirry projektin juurikansioon ja käynnistä frontend: 
+`npm run dev`.
 
-## Testing app with REST Client
+## API testaaminen REST Clientillä
 
-Run backend by navigating to server folder and running `npm run dev` or `npm run start`. 
-Open test.rest file under server/tests folder and press Send Request visible above test script.
+1. Käynnistä backend server-kansiossa komennollla `npm run dev` tai `npm run start`. 
+2. Avaa tiedosto `server/test.rest` editorissa, jossa REST Client -laajennus on käytettävissä.
+3. Suorita pyyntö painamalla testikoodin yläpuolella näkyvää Send Request -toimintoa.
 
-## Running backend tests with Vitest
+## Backendin testien suorittaminen Vitestillä
 
-Navigate to server folder and run `npm run test`.
+Siirry `server`-kansioon ja suorita testit komennolla:
 
-## Running frontend tests with Playwright
+npm run test
 
-Navigate to root folder and run `npx playwright test`. Make sure, that backend is running. Playwright configuration will start frontend, if not running, but not the backend.
+## Testikattavuusraportin luominen
 
+Testikattavuusraportin voi luoda server-kansiossa komennolla:
+
+`npm run coverage`
+
+Jos coverage-riippuvuudet on asennettu ja testiajo tuottaa raportin, raportti löytyy server/coverage-kansiosta. Avaa kansion index.html selaimessa tarkastellaksesi raporttia.
 
 
 
